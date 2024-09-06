@@ -1,25 +1,38 @@
+/* 全体の設定 */
+html, body {
+    height: 100%; /* 高さを100%に設定 */
+    margin: 0; /* デフォルトのマージンをリセット */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* 縦にレイアウト */
+}
+
+.main {
+    flex: 1; /* 残りのスペースを占める */
+    padding: 20px; /* 必要に応じてパディングを追加 */
+    box-sizing: border-box; /* パディングを含めたサイズ計算 */
+}
+
 header {
     background-color: #76B55B;
     height: 60px;
-    margin: -8px;
+    margin: 0; /* マージンをリセット */
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center; /* 横方向で中央揃え */
+    align-items: center; /* 縦方向で中央揃え */
 }
 
 .header-logo {
     color: #fff;
     font-size: 25px;
-    margin: 15px 25px;
+    text-decoration: none; /* 下線を消す */
 }
 
 .header_img {
     height: 25px;
     margin: 15px 25px;
-}
-
-.main {
-    height: 370px;
 }
 
 h2 {
@@ -47,18 +60,23 @@ form {
 footer {
     background-color: #F7F7F7;
     height: 110px;
-    margin: -8px;
+    margin: 0; /* マージンをリセット */
     position: relative;
+    width: 100%; /* フッタが全幅を占める */
 }
 
-.footer_img {
-    height: 25px;
-    margin: 15px 25px;
-}
-
-small {
+.small {
     margin: 15px 25px;
     position: absolute;
     left: 0;
     bottom: 0;
+}
+
+/* 画像のスタイルを追加 */
+#uploaded-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 2000px; /* 画像の幅を指定 */
+    width: 100%;       /* ブラウザサイズに合わせて縮小される */
+    height: auto;      /* アスペクト比を維持 */
 }
