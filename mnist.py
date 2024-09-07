@@ -33,12 +33,12 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             filepath = os.path.join(UPLOAD_FOLDER, filename)
-            
+
             img =cv2.imread(filepath)
             img = cv2.resize(img,img_size)
             img = img / 255.0  # 正規化
             img = np.expand_dims(img, axis=0)  # バッチ次元を追加
-            
+
             predicted = np.argmax(model.predict(img))
             pred_answer = "これは " + classes[predicted] + " です"
 
